@@ -41,7 +41,7 @@ def test_publish_queue(connection: Connection) -> None:
     assert accepted is True
     assert raised is False
 
-    credentials = pika.PlainCredentials("guest", "guest")
+    credentials = pika.PlainCredentials("admin", "admin123")
     parameters = pika.ConnectionParameters("localhost", credentials=credentials)
     connection = pika.BlockingConnection(parameters)
     channel = connection.channel()

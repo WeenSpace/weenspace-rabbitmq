@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [0.1.2] - 2024-12-26
+## [0.1.0] - 2025-12-26
 
 ### Added
 - Initial release of weenspace-rabbitmq

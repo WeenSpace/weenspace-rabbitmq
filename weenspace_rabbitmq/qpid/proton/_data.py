@@ -452,7 +452,7 @@ class RestrictedKeyDict(dict):
         validation_fn: Callable[[_T, bool], _T],
         e: Optional[Any] = None,
         raise_on_error: bool = True,
-        **kwargs
+        **kwargs,
     ) -> None:
         super(RestrictedKeyDict, self).__init__()
         self.validation_fn = validation_fn
@@ -573,7 +573,7 @@ class AnnotationDict(RestrictedKeyDict):
         self,
         e: Optional[Union[Dict, List, Tuple, Iterable]] = None,
         raise_on_error: bool = True,
-        **kwargs
+        **kwargs,
     ) -> None:
         super(AnnotationDict, self).__init__(
             _check_is_symbol_or_ulong, e, raise_on_error, **kwargs

@@ -283,7 +283,7 @@ def test_disconnection_reconnection() -> None:
     generic_exception_raised = False
 
     environment = Environment(
-        "amqp://guest:guest@localhost:5672/",
+        "amqp://admin:admin123@localhost:5672/",
         recovery_configuration=RecoveryConfiguration(active_recovery=True),
     )
 

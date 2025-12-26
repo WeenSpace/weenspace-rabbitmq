@@ -31,7 +31,7 @@ os.chdir(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 @pytest.fixture()
 def environment(pytestconfig):
-    environment = Environment(uri="amqp://guest:guest@localhost:5672/")
+    environment = Environment(uri="amqp://admin:admin123@localhost:5672/")
     try:
         yield environment
 
@@ -55,7 +55,7 @@ def environment_auth(pytestconfig):
 
 @pytest.fixture()
 def connection(pytestconfig):
-    environment = Environment(uri="amqp://guest:guest@localhost:5672/")
+    environment = Environment(uri="amqp://admin:admin123@localhost:5672/")
     connection = environment.connection()
     connection.dial()
     try:
@@ -68,7 +68,7 @@ def connection(pytestconfig):
 @pytest.fixture()
 def connection_with_reconnect(pytestconfig):
     environment = Environment(
-        uri="amqp://guest:guest@localhost:5672/",
+        uri="amqp://admin:admin123@localhost:5672/",
         recovery_configuration=RecoveryConfiguration(active_recovery=True),
     )
     connection = environment.connection()
@@ -104,7 +104,7 @@ def ssl_context(pytestconfig):
 def connection_ssl(pytestconfig, ssl_context):
 
     environment = Environment(
-        "amqps://guest:guest@localhost:5671/",
+        "amqps://admin:admin123@localhost:5671/",
         ssl_context=ssl_context,
     )
     connection = environment.connection()
@@ -118,7 +118,7 @@ def connection_ssl(pytestconfig, ssl_context):
 
 @pytest.fixture()
 def management(pytestconfig):
-    environment = Environment(uri="amqp://guest:guest@localhost:5672/")
+    environment = Environment(uri="amqp://admin:admin123@localhost:5672/")
     connection = environment.connection()
     connection.dial()
     try:
@@ -131,7 +131,7 @@ def management(pytestconfig):
 
 @pytest.fixture()
 def consumer(pytestconfig):
-    environment = Environment(uri="amqp://guest:guest@localhost:5672/")
+    environment = Environment(uri="amqp://admin:admin123@localhost:5672/")
     connection = environment.connection()
     connection.dial()
     try:

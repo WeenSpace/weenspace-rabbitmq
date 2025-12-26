@@ -128,7 +128,8 @@ def test_stream_read_from_offset_zero(
     except ConsumerTestException:
         pass
     finally:
-        consumer.close()
+        if consumer is not None:
+            consumer.close()
         management.delete_queue(stream_name)
 
 

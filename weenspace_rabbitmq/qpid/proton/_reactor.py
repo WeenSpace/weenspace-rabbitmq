@@ -1039,7 +1039,7 @@ class Backoff(object):
 
 
 def make_backoff_wrapper(
-    backoff: Optional[Union[List[Union[float, int]], bool, Backoff]]
+    backoff: Optional[Union[List[Union[float, int]], bool, Backoff]],
 ) -> Optional[Union[List[Union[float, int]], bool, Backoff]]:
     """
     Make a wrapper for a backoff object:
@@ -1296,7 +1296,7 @@ class Container(Reactor):
         reconnect: Union[None, Literal[False], Backoff] = None,
         heartbeat: Optional[float] = None,
         ssl_domain: Optional[SSLDomain] = None,
-        **kwargs
+        **kwargs,
     ) -> Connection:
         """
         Initiates the establishment of an AMQP connection.
@@ -1432,7 +1432,7 @@ class Container(Reactor):
                 reconnect=reconnect,
                 heartbeat=heartbeat,
                 ssl_domain=_ssl_domain,
-                **_kwargs
+                **_kwargs,
             )
         else:
             return self._connect(
@@ -1442,7 +1442,7 @@ class Container(Reactor):
                 reconnect=reconnect,
                 heartbeat=heartbeat,
                 ssl_domain=ssl_domain,
-                **kwargs
+                **kwargs,
             )
 
     def _connect(
@@ -1453,7 +1453,7 @@ class Container(Reactor):
         reconnect: Optional[Union[List[Union[float, int]], bool, Backoff]] = None,
         heartbeat: None = None,
         ssl_domain: Optional[SSLDomain] = None,
-        **kwargs
+        **kwargs,
     ) -> Connection:
         conn = self.connection(handler)
         conn.container = kwargs.get("container_id", self.container_id) or str(

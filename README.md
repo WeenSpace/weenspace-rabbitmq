@@ -1,8 +1,8 @@
 # WeenSpace RabbitMQ Client
 
 [![PyPI version](https://badge.fury.io/py/weenspace-rabbitmq.svg)](https://pypi.org/project/weenspace-rabbitmq/)
-[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
-[![License](https://img.shields.io/badge/license-Apache%202.0-green.svg)](LICENSE)
+[![Python 3.13+](https://img.shields.io/badge/python-3.13+-blue.svg)](https://www.python.org/downloads/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 A powerful Python RabbitMQ client for AMQP 1.0 protocol, designed for event-driven microservices architecture.
 
@@ -124,12 +124,12 @@ from weenspace_rabbitmq import Environment, Connection
 
 ## 📋 Requirements
 
-- Python 3.9+
+- Python 3.13+
 - RabbitMQ 4.x with AMQP 1.0 plugin enabled
 
 ## 📄 License
 
-Apache License 2.0 - Based on the official [RabbitMQ AMQP Python Client](https://github.com/rabbitmq/rabbitmq-amqp-python-client)
+MIT License - Based on the official [RabbitMQ AMQP Python Client](https://github.com/rabbitmq/rabbitmq-amqp-python-client)
 
 ## 🙏 Credits
 

@@ -329,7 +329,7 @@ async def test_disconnection_reconnection_async(
     generic_exception_raised = False
 
     environment = AsyncEnvironment(
-        uri="amqp://guest:guest@localhost:5672/",
+        uri="amqp://admin:admin123@localhost:5672/",
         recovery_configuration=RecoveryConfiguration(active_recovery=True),
     )
 

@@ -430,7 +430,7 @@ class BlockingConnection(Handler):
         urls: Optional[List[str]] = None,
         reconnect: Union[None, Literal[False], "Backoff"] = None,
         on_disconnection_handler: Optional[CB] = None,
-        **kwargs
+        **kwargs,
     ) -> None:
 
         # Preserve previous behaviour if neither reconnect nor urls are supplied
@@ -459,7 +459,7 @@ class BlockingConnection(Handler):
                 reconnect=False,
                 heartbeat=heartbeat,
                 urls=None,
-                **kwargs
+                **kwargs,
             )
             try:
                 self.wait(
