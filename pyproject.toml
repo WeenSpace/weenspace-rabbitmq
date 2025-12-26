@@ -1,0 +1,56 @@
+[tool.poetry]
+name = "weenspace-rabbitmq"
+version = "0.1.2"
+description = "WeenSpace RabbitMQ client for AMQP 1.0 - Event-driven microservices communication with OAuth2, TLS, Dead Letter Queues, and Priority Queues support"
+authors = ["WeenSpace Team <dev@weenspace.com>"]
+license = "Apache-2.0"
+readme = "README.md"
+homepage = "https://github.com/weenspace/weenspace-rabbitmq"
+repository = "https://github.com/weenspace/weenspace-rabbitmq"
+keywords = ["rabbitmq", "amqp", "messaging", "event-driven", "microservices", "queue", "weenspace"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: System :: Networking",
+]
+packages = [{include = "weenspace_rabbitmq"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+python-qpid-proton = "^0.40.0"
+typing-extensions = "^4.13.0"
+packaging = "^23.0"
+
+[tool.poetry.group.dev.dependencies]
+pyjwt = "^2.10.1"
+pika = "^1.3.2"
+flake8 = "^7.1.1"
+isort = "^5.9.3"
+mypy = "^0.910"
+pytest = "^8.3.4"
+black = "^24.3.0"
+python-qpid-proton = "^0.40.0"
+requests = "^2.31.0"
+pytest-asyncio = "^1.2.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+
+[tool.black]
+line-length = 88
+target-version = ['py39', 'py310', 'py311', 'py312']
+
+[tool.isort]
+profile = "black"
+line_length = 88
